@@ -1,0 +1,87 @@
+{% extends 'base.html' %} 
+{% block title %}夢ものがたり {% endblock %}
+
+{% block mata %}
+  <meta name="description" content="
+  ツギヨムは、読書を通じて新しい友達を見つけ、おすすめの本について話し合い、読んだ本を記録できるコミュニティサイトです。投票機能で人気の本を決め、共通の趣味を持つ人々と繋がることができます。 
+  ">
+  <meta content="
+  ツギヨムは、読書を通じて新しい友達を見つけ、おすすめの本について話し合い、読んだ本を記録できるコミュニティサイトです。投票機能で人気の本を決め、共通の趣味を持つ人々と繋がることができます。">
+  <meta name="keywords" content="ツギヨム tsugiyomu 次に読む ツギヨムとは">
+{% endblock %}
+{% load static %} 
+
+{% block content %}
+
+<br>
+
+ <div class="w-full p-2 md:w-1/2 m-auto ">
+        <p class="text-center font-bold text-3xl">夢ものがたり</p>
+        <br>
+        <p>夢物語は、あなたが抱く夢を小説形式の日記として記録し、その過程を楽しみながら夢の実現を目指すためのコミュニティサイトです。</p>
+</div>
+<hr>
+<div class="p-10 w-full md:w-2/3 m-auto ">
+    <div>
+        <div>
+            <p class="font-bold text-5xl text-orange-400">01</p>
+            <p class="font-bold text-2xl"> 夢を設定する</p>
+        </div>
+       
+        <p>最初に、あなたが追いかけたい夢や目標を設定します。</p>
+    </div>
+    <div>
+        <div>
+            <p class="font-bold text-5xl text-orange-400">02</p>
+            <p class="font-bold text-2xl"> 主人公を設定する</p>
+        </div>
+       
+        <p>次に、その夢を追いかける主人公を設定します。目標を達成できそうな主人公を考えましょう</p>
+    </div>
+    <div>
+        <div>
+            <p class="font-bold text-5xl text-orange-400">03</p>
+            <p class="font-bold text-2xl"> 夢の進行を物語として記録する</p>
+        </div>
+       
+        <p>夢を追う過程で実際に行ったことや出来事を、小説形式の日記として投稿します。この物語が、あなたの夢への旅路を記録するものとなります。</p>
+    </div>
+   
+</div>
+<div class="flex items-center justify-center">
+
+    {% if user.is_authenticated %}
+    <a href="" class="text-white">
+        <a class="border-gray-400 border rounded-full px-4 py-2 bg-white hover:bg-gray-50" href="">物語を書く</a>
+    </a>
+    {% else %}
+        <a class="border-gray-400 border rounded-full px-4 py-2 bg-white hover:bg-gray-50 "href="">はじめる</a>
+    {% endif %}
+</div>
+<br>
+ <hr class="my-2">
+<div class="m-2 pb-10 ">
+  <h1 class="text-2xl md:text-4xl  md:text-center font-bold my-8 ">このサイトが目指す場所</h1>
+  <p class="text-center text-xl font-sans my-4 ">夢ものがたりは次のようなサイトを目指しています。</p>
+
+  <div class="w-4/5 md:w-1/2 mx-auto">
+    <div class="flex">
+      <p class="h-8 w-8 font-bold text-3xl">1.</p>
+      <p class="m-2">夢を共有し、サポートし合えるコミュニティサイト</p>
+    </div>
+    <div class="flex">
+      <p class="h-8 w-8 font-bold text-3xl">2.</p>
+      <p class="m-2">夢を追いかける過程を楽しむことができるサイトを目指しています</p>
+    </div>
+    <div class="flex">
+      <p class="h-8 w-8 font-bold text-3xl">3.</p>
+      <p class="m-2">創造力を刺激し、物語を通じて成長できるサイトを目指しています</p>
+    </div>
+  
+    
+  </div>
+</div>
+
+
+
+{% endblock %}
