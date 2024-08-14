@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+{% block title %}夢ものがたり:アカウント認証 {% endblock %}
+{% block content %}
+
+<div class="w-full md:w-1/2 p-5 m-auto text-center" >
+    <h1 class="text-4xl font-bold" >アカウント有効化</h1>
+    <p>{{ message }}</p>
+    <br>
+    <a class="bg-blue-300 text-white my-4 px-4 py-3" href="{% url 'login' %}">ログインページへ</a>
+</div>
+{% endblock %}

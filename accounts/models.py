@@ -27,7 +27,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-
+    
 
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     uid = models.CharField("uid", max_length=30, unique=True)
@@ -54,6 +54,10 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.name
+    
+
+    
+
     
 from django.dispatch import receiver
 from hashids import Hashids
