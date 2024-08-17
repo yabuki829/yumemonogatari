@@ -53,3 +53,10 @@ def activate_user(uidb64, token):
         return True
     
     return False
+
+from django import forms
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['name', 'image', 'introduction']
