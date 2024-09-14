@@ -1,11 +1,11 @@
 from django.urls import path
-from . import views
+from .views import login,signup,activate,mypage,edit_mypage
 urlpatterns = [
-    path('login/', views.LoginView.as_view(), name='login'),
-    path("signup/", views.SignUpView.as_view(), name="signup"),
-    path('activate/<uidb64>/<token>/', views.ActivateView.as_view(), name='activate'),
-    path('profile/', views.ProfileView.as_view(), name='mypage'),
-    path('profile/edit/', views.EditProfileView.as_view(), name='profile_edit'),
+    path('login/', login.LoginView.as_view(), name='login'),
+    path("signup/", signup.SignUpView.as_view(), name="signup"),
+    path('activate/<uidb64>/<token>/', activate.ActivateView.as_view(), name='activate'),
+    path('mypage/', mypage.MyPageView.as_view(), name='mypage'),
+    path('edit/mypage/', edit_mypage.EditMypageView.as_view(), name='edit_mypage'),
 ]
 from django.conf import settings
 from django.conf.urls.static import static

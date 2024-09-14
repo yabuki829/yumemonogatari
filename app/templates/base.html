@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <link rel="icon" type="image/x-icon" href="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/x-icon" href="">
 
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
- 
-  <title>{% block title %}{% endblock %} </title>
-  
-  {% block mata %}{% endblock mata %}
-    
-  {% block css %} {% endblock %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
-  {% block header %} {% endblock header %}
+    <title>{% block title %}{% endblock %} </title>
+
+    {% block mata %}{% endblock mata %}
+
+    {% block css %} {% endblock %}
+
+    {% block header %} {% endblock header %}
 </head>
+
 <body class="flex flex-col min-h-screen bg-gray-100 ">
 
 
@@ -42,34 +44,38 @@
                 </ul>
                 <div>
                     {% if user.is_authenticated %}
-                        <a href="" class="text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                            </svg>
-                        </a>
+                    <a href="{% url 'mypage' %}" class="text-white">
+                        <img class="w-12 h-12"
+                            src="{% if user.image %}{{ user.image.url }}{% else %}/static/images/profile.png{% endif %}"
+                            alt="">
+                    </a>
                     {% else %}
-                        <a href="{% url 'login' %}" class="text-black bg-white hover:bg-gray-50 rounded px-4 py-2">はじめる</a>
+                    <a href="{% url 'login' %}" class="text-black bg-white hover:bg-gray-50 rounded px-4 py-2">はじめる</a>
                     {% endif %}
                 </div>
             </div>
         </div>
     </nav>
-    
-    
-<div class=" flex-grow pt-16">
 
-  {% block content %}
-  {% endblock %}
-</div>
-<footer class="bg-gray-800 text-white py-6 pt-10">
-  <div class="container mx-auto text-center">
-      <p class="mb-4">© 2023  yumemonogatari All Rights Reserved.</p>
-      <div class="space-x-4">
-          <a href="#" class="text-gray-300 hover:text-white">Terms of Service</a>
-          <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
-          <a href="#" class="text-gray-300 hover:text-white">Contact Us</a>
-      </div>
-  </div>
-</footer>
+
+    <div class=" flex-grow pt-16">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer class="bg-gray-800 text-white py-6 pt-10">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2024 yumemonogatari All Rights Reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white">Terms of Service</a>
+                <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+    </script>
 </body>
+
 </html>

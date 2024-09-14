@@ -56,7 +56,7 @@ def activate_user(uidb64, token):
 
 from django import forms
 
-class ProfileForm(forms.ModelForm):
+class MyPageForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['name', 'image', 'introduction']
